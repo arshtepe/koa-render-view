@@ -1,4 +1,4 @@
-# kkoa-render-view
+# koa-render-view
   Koa2 template render middleware
 
 ## Installation
@@ -9,7 +9,7 @@
 
 ### Basic usage
 ```javascript
-const views = require('koa-view-render');
+const views = require('koa-render-view');
 const path = require('path');
 
 app.use(views(path.join(__dirname, '/views')));
@@ -72,7 +72,7 @@ app.use(async function ({render}, next) {
 #### Aliases usage
 
 ```javascript
-const views = require('koa-view-render');
+const views = require('koa-render-view');
 const data = {
     message: "Hello world"
 };
@@ -95,7 +95,7 @@ app.use(async function ({render}, next) {
 If folders "views" and "views1" contain the same file, will be conflict and render any from the same file. 
 For example:
 ```javascript
-const views = require('koa-view-render');
+const views = require('koa-render-view');
 const path = require('path');
 
 /*
