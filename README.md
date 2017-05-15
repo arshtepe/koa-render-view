@@ -1,9 +1,9 @@
-# koa-views-render
+# kkoa-render-view
   Koa2 template render middleware
 
 ## Installation
 ```
-  $ npm install --save koa-views-render
+  $ npm install --save koa-render-view
 ```  
 ## Examples
 
