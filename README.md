@@ -123,7 +123,7 @@ In this case midleware renders first index.html in its file list. To decide this
 ## API 
 
 #### `views( {(string|string[])}, parameters )`
-
+**By default use [consolidate](https://github.com/tj/consolidate.js)**
 #### [parameters.engine=[consolidate](https://github.com/tj/consolidate.js)]
 Template engine. 
 Custom engine example: 
