@@ -20,13 +20,13 @@ describe("Render parameters test", function () {
 
     });
 
-    it("Options and map parameters", function (done) {
+    it("Default data and map parameters", function (done) {
         TestUtils.baseTestCheck(TestUtils.getServer("index.xejs", {
             baseConfig: {
                 map: {
                     xejs: "ejs"
                 },
-                options: {
+                data: {
                     message: MESSAGE
                 }
             }
@@ -53,7 +53,7 @@ describe("Render parameters test", function () {
             }
         }), done);
 
-    })
+    });
 
     it("Recursive parameter:true", function (done) {
         TestUtils.baseTestCheck(TestUtils.getServerWithMessage("recursive.ejs", {
@@ -67,6 +67,7 @@ describe("Render parameters test", function () {
         const app = new Koa();
         app.use(views(path.join(__dirname, "templates")));
         app.use(async (ctx, next) => {
+
             try {
                 await ctx.render("recursive.ejs");
             } catch (err) {

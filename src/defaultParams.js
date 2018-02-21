@@ -1,11 +1,18 @@
 const consolidate = require('consolidate');
 
 module.exports = {
+    render: {},
+    stream: true,
+    pathToHTMLWrapper: null,
     engine: consolidate,
     extension: 'html',
-    cache: true,
+    cache: {
+        path: true,
+        files: true,
+        template: true
+    },
     recursive: false,
-    options: {},
+    data: {},
     map: {
         jsx: "react"
     },
