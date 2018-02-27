@@ -1,16 +1,13 @@
 const Utils = require("../utils/Utils");
-const fs = require("fs")
+const StringReadableStream = require("../utils/StringReadableStream");
 
 module.exports = class {
     async compile(pathToTemplate, isStream) {
-        let template = "";
-        if(!isStream) {
-            template = await Utils.readFile(pathToTemplate);
-        }
+        let template = await Utils.readFile(pathToTemplate);
 
         return () => {
-            if(isStream) {
-                return fs.createReadStream(pathToTemplate)
+            if (isStream) {
+                return new StringReadableStream(template);
             }
             return template;
         };
